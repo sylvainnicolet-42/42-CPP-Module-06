@@ -11,7 +11,7 @@
 # **************************************************************************** #
 
 # VARIABLES
-NAME 			= ex00
+NAME 			= convert
 
 # COMPILATION OPTIONS
 CC				= c++
