@@ -1,3 +1,6 @@
+
+# Casts
+
 Les trois types de casts que vous avez mentionnés (`static_cast`, `reinterpret_cast` et `dynamic_cast`) sont des opérateurs de conversion en C++. Chacun a un but spécifique et s'applique dans des situations différentes. Voici une explication de chacun d'entre eux :
 
 1. **`static_cast`** :
@@ -39,3 +42,25 @@ Les trois types de casts que vous avez mentionnés (`static_cast`, `reinterpret_
    ```
 
 Chacun de ces casts a ses propres utilisations et implications, et il est important de les utiliser judicieusement et en comprenant bien leur comportement pour éviter des erreurs de type et des comportements inattendus dans votre code.
+
+
+# Valeurs spéciales
+
+Les termes que vous mentionnez, tels que `inf`, `+inf`, `nan`, `inff`, `+inff` et `nanf`, sont liés à la représentation des valeurs spéciales dans les nombres à virgule flottante en informatique, en particulier dans les normes IEEE 754 pour les calculs en virgule flottante.
+
+1. **`inf`** (ou `+inf`) :
+   Cela représente l'infini positif dans les nombres à virgule flottante. C'est utilisé pour représenter des valeurs qui dépassent la capacité de représentation du type de données en question. Par exemple, dans le contexte de `float` ou `double`, `inf` ou `+inf` représente la plus grande valeur possible.
+
+2. **`-inf`** :
+   C'est l'infini négatif dans les nombres à virgule flottante. Il représente des valeurs négatives qui sont inférieures à la capacité de représentation du type de données en question.
+
+3. **`nan`** :
+   `nan` signifie "Not-a-Number" (pas un nombre). C'est utilisé pour représenter des situations où une opération mathématique ne produit pas de résultat valide, comme la division par zéro. Un résultat `nan` est généralement considéré comme indéfini et ne peut pas être utilisé pour des calculs ultérieurs.
+
+4. **`inff`** (ou `+inff`) :
+   Ces variantes, comme `inff` et `+inff`, sont utilisées pour les constantes de virgule flottante de type `float`. Elles fonctionnent de la même manière que `inf` et `+inf`, mais spécifiquement pour le type `float`.
+
+5. **`nanf`** :
+   Comme `nan`, `nanf` est utilisé pour représenter le "Not-a-Number" (pas un nombre) spécifiquement pour le type `float`.
+
+Ces valeurs spéciales sont importantes pour traiter des cas particuliers lors de la manipulation de nombres à virgule flottante, car elles indiquent des situations telles que les dépassements, les divisions par zéro ou les résultats indéfinis. Il est crucial de comprendre comment ces valeurs spéciales sont gérées dans le contexte de la norme IEEE 754 et de votre langage de programmation, car elles peuvent avoir un impact sur la précision et la validité de vos calculs.
