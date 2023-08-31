@@ -121,46 +121,63 @@ void	toChar(const std::string& str) {
 float	toFloat(std::string str) {
 	// Permet de manipuler des chaînes de caractères comme si elles étaient
 	// des flux d'entrée ou de sortie.
-	std::stringstream ss;
+	std::stringstream ss1;
+	std::stringstream ss2;
 	float f;
+	int	i;
 
 	// Remove the 'f' at the end of the string with pop_back()
 	str.pop_back();
 
 	// Put the string into the stream
-	ss << str;
+	ss1 << str;
+	ss2 << str;
 
-	// Extract the float from the stream
-	ss >> f;
+	// Extract the float and the int from the stream
+	ss1 >> i;
+	ss2 >> f;
 
 	printChar(static_cast<char>(f));
-	printInt(static_cast<int>(f));
-	if (ss.fail())
+	if (ss1.fail())
+		printInt(0, false);
+	else
+		printInt(static_cast<int>(f));
+	if (ss2.fail())
 		printFloat(0, false);
 	else
 		printFloat(f);
 	printDouble(static_cast<double>(f));
 
 	// Clear the stream
-	ss.clear();
+	ss1.clear();
+	ss2.clear();
 
 	return f;
 }
 
 void	toDouble(const std::string& str) {
-	std::stringstream ss;
+	std::stringstream ss1;
+	std::stringstream ss2;
 	double d;
+	int i;
 
-	ss << str;
-	ss >> d;
+	ss1 << str;
+	ss2 << str;
+
+	ss1 >> i;
+	ss2 >> d;
 	printChar(static_cast<char>(d));
-	printInt(static_cast<int>(d));
+	if (ss1.fail())
+		printInt(0, false);
+	else
+		printInt(static_cast<int>(d));
 	printFloat(static_cast<float>(d));
-	if (ss.fail())
+	if (ss2.fail())
 		printDouble(0, false);
 	else
 		printDouble(d);
-	ss.clear();
+	ss1.clear();
+	ss2.clear();
 }
 
 void	toInt(const std::string& str) {
